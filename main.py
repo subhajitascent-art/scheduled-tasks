@@ -3,8 +3,8 @@ import random
 import pandas as pd
 import datetime as dt
 
-MY_EMAIL='subhajit.ascent@gmail.com'
-MY_PASS='rzwkgpjpszyzxixv'
+MY_EMAIL = os.environ.get("MY_EMAIL")
+MY_PASSWORD = os.environ.get("MY_PASSWORD")
 SMTP_SERVER='smtp.gmail.com'
 
 # read the CSV file
