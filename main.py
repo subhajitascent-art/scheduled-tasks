@@ -5,7 +5,7 @@ import os
 
 MY_EMAIL = os.environ.get("MY_EMAIL")
 MY_PASSWORD = os.environ.get("MY_PASSWORD")
-TO_ADDR='paromita.ascent@gmail.com'
+
 emails_sub='Inspirational Quote of '
 
 
@@ -26,6 +26,7 @@ if day_of_week==1:
     with smtplib.SMTP("smtp.gmail.com", port=587) as con:
         con.starttls()
         con.login(user=MY_EMAIL,password=MY_PASSWORD)
-        con.sendmail(from_addr=USER_NAME,to_addrs=TO_ADDR,msg=f'Subject: {emails_sub}\n\n {quote_of_day}')
+        con.sendmail(from_addr=MY_EMAIL,to_addrs=MY_EMAIL,msg=f'Subject: {emails_sub}\n\n {quote_of_day}')
+
 
 
