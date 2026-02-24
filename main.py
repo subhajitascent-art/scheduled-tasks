@@ -19,7 +19,7 @@ days_of_week={
 }
 if day_of_week==1:
     quotes=[]
-    with open(file='./DailyQuotes/quotes.txt') as f1:
+    with open(file='./quotes.txt') as f1:
      quotes=f1.readlines()
     emails_sub += days_of_week[2]+'!'
     quote_of_day=random.choice(quotes)
@@ -27,6 +27,7 @@ if day_of_week==1:
         con.starttls()
         con.login(user=MY_EMAIL,password=MY_PASSWORD)
         con.sendmail(from_addr=MY_EMAIL,to_addrs=MY_EMAIL,msg=f'Subject: {emails_sub}\n\n {quote_of_day}')
+
 
 
 
