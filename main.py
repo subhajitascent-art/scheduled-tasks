@@ -1,10 +1,11 @@
 import smtplib
 import random
 import datetime as dt
+import os
 
-USER_NAME='subhajit.ascent@gmail.com'
+MY_EMAIL = os.environ.get("MY_EMAIL")
+MY_PASSWORD = os.environ.get("MY_PASSWORD")
 TO_ADDR='paromita.ascent@gmail.com'
-PASSWORD='rzwkgpjpszyzxixv'
 emails_sub='Inspirational Quote of '
 
 
@@ -24,6 +25,7 @@ if day_of_week==1:
     quote_of_day=random.choice(quotes)
     with smtplib.SMTP("smtp.gmail.com", port=587) as con:
         con.starttls()
-        con.login(user=USER_NAME,password=PASSWORD)
+        con.login(user=MY_EMAIL,password=MY_PASSWORD)
         con.sendmail(from_addr=USER_NAME,to_addrs=TO_ADDR,msg=f'Subject: {emails_sub}\n\n {quote_of_day}')
+
 
