@@ -2,6 +2,7 @@ import smtplib
 import random
 import pandas as pd
 import datetime as dt
+import os
 
 MY_EMAIL = os.environ.get("MY_EMAIL")
 MY_PASSWORD = os.environ.get("MY_PASSWORD")
