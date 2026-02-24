@@ -29,7 +29,7 @@ if not today_birthday_person.empty:
             # send the email
             with smtplib.SMTP(SMTP_SERVER,port=587) as con:
                 con.starttls()
-                con.login(MY_EMAIL,MY_PASS)
+                con.login(MY_EMAIL,MY_PASSWORD)
                 con.sendmail(
                     from_addr=MY_EMAIL,to_addrs=row['email'],
                     msg=f'Subject: Happy Birthday !! \n\n{nw_text}'
