@@ -3,7 +3,7 @@ from twilio.rest import Client
 import os
 
 API_END_POINT='https://api.openweathermap.org/data/2.5/forecast'
-API_KEY=os.getenv("OWM_KEY")
+API_KEY=os.environ.get("OWM_KEY")
 
 ACCOUNT_SID=os.environ.get("TWILO_SID")
 AUTH_TOKEN=os.environ.get("TWILO_KEY")
@@ -50,5 +50,6 @@ else:
     )    
 
     print(message.status)      
+
 
 
